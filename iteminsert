@@ -1,1 +1,1 @@
-insert into item(category_id,item_picid,item_weight,item_price,item_desc,item_name) values('1','21','200','600000','Bangles - Gold','Bangles');
+insert into item(item_id,category_id,item_picid,item_weight,item_price,item_desc,item_name) values('1','1','21','200','600000','Bangles - Gold','Bangles');
