@@ -35,16 +35,16 @@
   <form class="form" method="post" action="${context}/admin/insertItem">
   	  
     <input type="text" class="name" placeholder="itemName">
-     <p class="name-help">Please enter your first and last name.</p>
+     <p class="name-help">Enter Item name here.</p>
     <div>
-	    <form:select path="category">
-	  	  <form:options items="${categoryret}" />
-		</form:select>
+	    <select name="category">
+	    <c:forEach var="cat" items="${categoryret}">
+	    	<option label="${cat}">${cat}</option>
+	    </c:forEach>
+	  	  
+		</select>
     </div>
-    <input type="email" class="email" placeholder="itemDesc">
-     <div>
-      <p class="email-help">Please enter your current email address.</p>
-    </div>
+   
     <input type="submit" class="submit" value="Register">
     <input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
