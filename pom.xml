@@ -9,7 +9,6 @@
 	<properties>
 		<deploydir>C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps</deploydir>
 		<jackson.version>1.9.10</jackson.version>
-		<spring.security.version>3.2.3.RELEASE</spring.security.version>
 	</properties>
 	<dependencies>
 	<dependency>
@@ -17,18 +16,29 @@
     <artifactId>spring-security-taglibs</artifactId>
     <version>4.0.3.RELEASE</version>
 </dependency>
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<!-- <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
+	https://mvnrepository.com/artifact/org.springframework/spring-core
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
     <version>4.0.3.RELEASE</version>
 </dependency>
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+	https://mvnrepository.com/artifact/org.springframework/spring-beans
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-beans</artifactId>
     <version>4.0.3.RELEASE</version>
-</dependency>
+</dependency> -->
 	
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
@@ -42,11 +52,11 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>4.0.3.RELEASE</version>
-		</dependency>
+		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
 <dependency>
     <groupId>commons-logging</groupId>
@@ -56,11 +66,11 @@
 		
 
 		<!-- Spring and Transactions -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>4.0.3.RELEASE</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -72,12 +82,12 @@
 			<version>4.0.3.RELEASE</version>
 		</dependency>
 
-		<!-- Spring ORM support -->
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>4.0.3.RELEASE</version>
-		</dependency>
+		</dependency> 
 		<!-- http://mvnrepository.com/artifact/jstl/jstl -->
 		<dependency>
 			<groupId>jstl</groupId>
@@ -105,17 +115,19 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.9</version>
 		</dependency>
+		 <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>4.0.3.RELEASE</version>
+    </dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>4.0.3.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>4.0.3.RELEASE</version>
-		</dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-framework-bom</artifactId>
+		<version>4.2.2.RELEASE</version>
+		<type>pom</type>
+		<scope>import</scope>
+	</dependency>
+	
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
