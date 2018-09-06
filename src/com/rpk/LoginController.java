@@ -20,8 +20,7 @@ public class LoginController {
 	public ModelAndView adminPage() {
 
 		ModelAndView model = new ModelAndView();		
-		model.addObject("categoryret",catret.getCategory());
-		model.setViewName("addItem");
+		model.setViewName("admin");
 
 		return model;
 
@@ -31,6 +30,7 @@ public class LoginController {
 	public ModelAndView uploaditem()
 	{
 		ModelAndView model = new ModelAndView();
+		model.addObject("categoryret",catret.getCategory());
 		model.setViewName("addItem");
 		return model;
 				
