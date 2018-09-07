@@ -18,6 +18,7 @@
 --
 -- Table structure for table `category`
 --
+use rpk;
 
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
