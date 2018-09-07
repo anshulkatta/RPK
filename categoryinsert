@@ -1,2 +1,0 @@
-insert into category(category_id,category_desc,category_name)
-values ('1','Gold Jewellery','Gold Jewelery');
