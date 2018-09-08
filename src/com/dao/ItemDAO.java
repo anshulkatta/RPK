@@ -22,4 +22,9 @@ public class ItemDAO {
 		return  q.list();
 		
 	}
+	
+	public void insertItem(Item item){
+		Session s= hutil.getSessionFactory().getCurrentSession();
+		s.persist(item);
+	}
 }

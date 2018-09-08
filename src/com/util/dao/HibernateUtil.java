@@ -19,5 +19,9 @@ public class HibernateUtil {
 	{
 		return sf.openSession();
 	}
+	
+	public SessionFactory getSessionFactory() {
+		return sf;
+	}
 
 }

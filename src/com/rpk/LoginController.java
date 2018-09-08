@@ -2,6 +2,8 @@ package com.rpk;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +16,9 @@ public class LoginController {
 	
 	@Autowired
 	CategoryRetreiver catret;
+	
+	@Autowired
+	ItemRetriever itemRetriever;
 	
 
 	@RequestMapping(value = {"/admin/**" }, method = RequestMethod.GET)
@@ -32,6 +37,7 @@ public class LoginController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("categoryret",catret.getCategory());
 		model.setViewName("addItem");
+		model.addObject("item", new Item());
 		return model;
 				
 	}
@@ -55,10 +61,13 @@ public class LoginController {
 	}	
 	
 	@RequestMapping(value="/admin/insertItem",method=RequestMethod.POST)
-	public ModelAndView insertitem(@RequestParam Item item)
+	public ModelAndView insertitem(@ModelAttribute("item") Item item
+			, BindingResult result,
+			ModelAndView model)
 	{
-		System.out.println(item);
-		return null;
+		String response = itemRetriever.insertItem(item);
+		model.addObject("status",response);
+		return model;
 	}
 
 }
