@@ -39,8 +39,12 @@
       </ul>
     </div>
   </nav>
-
-	<div class="container light-blue lighten-2">
+    <c:if test="${not empty status}">
+   			<p class="center white-text">
+   			Add Item Status - ${status}
+   			</p>
+	</c:if>
+	<div class="container teal lighten-2">
 		<div class="row">
 		<div class="center">
 			<h4>Add New Item</h4>
@@ -81,7 +85,7 @@
 			
 				<div class="center">
 				
-				<button class="btn waves-effect waves-light" type="submit"
+				<button class="btn waves-effect waves-light red accent-2" type="submit"
 					name="action">Submit
 					<i class="material-icons right">send</i>
 				</button>
@@ -111,5 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems, options);
     
   });
+  
+
 </script>
 </html>
