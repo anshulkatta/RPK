@@ -25,7 +25,7 @@ public class ItemRetriever {
 	@Transactional
 	public String insertItem(Item item) {
 		try {
-			itemdao.insertItem(item);
+			int id = itemdao.insertItem(item);
 			return HTMLUtil.SUCCESS;
 		}catch(Exception e){
 			e.printStackTrace();

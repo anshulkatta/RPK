@@ -23,8 +23,9 @@ public class ItemDAO {
 		
 	}
 	
-	public void insertItem(Item item){
+	public Integer insertItem(Item item){
 		Session s= hutil.getSessionFactory().getCurrentSession();
-		s.persist(item);
+		Integer id = (Integer)s.save(item);
+		return id;
 	}
 }
