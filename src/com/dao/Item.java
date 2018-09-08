@@ -4,6 +4,8 @@ package com.dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 @Table(name = "item", catalog = "rpk")
 public class Item implements java.io.Serializable {
 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int itemId;
 	private String itemName;
 	private String itemDesc;
@@ -98,6 +101,12 @@ public class Item implements java.io.Serializable {
 
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
+	}
+	
+	@Override
+	public String toString() {
+		return getItemName() +"\n" +getItemDesc() +"\n"
+				+getCategoryId()+getItemPrice() +"\n" + getItemWeight();
 	}
 
 }
