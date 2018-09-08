@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dao.Item;
 
@@ -63,11 +64,13 @@ public class LoginController {
 	@RequestMapping(value="/admin/insertItem",method=RequestMethod.POST)
 	public ModelAndView insertitem(@ModelAttribute("item") Item item
 			, BindingResult result,
-			ModelAndView model)
+			ModelAndView model, RedirectAttributes redirectAttributes)
 	{
 		String response = itemRetriever.insertItem(item);
-		model.addObject("status",response);
-		return model;
+		ModelAndView m = new ModelAndView(); 
+		redirectAttributes.addFlashAttribute("status",response);
+		m.setViewName("redirect:/admin/addItem");
+		return m;
 	}
 
 }
