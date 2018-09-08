@@ -2,7 +2,7 @@
 <%@page import="org.springframework.context.annotation.Import"%>
 <%@ page language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 <html>
 <head>
@@ -46,22 +46,37 @@
 			<h4>Add New Item</h4>
 			
 		</div>
-			<form class="col s12" method="post"
-				action="${context}/admin/insertItem">
+			<form:form class="col s12" method="post"
+				action="${context}/admin/insertItem" modelAttribute="item">
 				<!-- Item Name -->
 				<div class="input-field col s6">
-					<input id="itemName" type="text" class="validate">
+					<form:input id="itemName" type="text" class="validate" path="itemName"/>
 					 <label class="black-text" for="itemName">Enter Item Name</label>
 				</div>
 				<!-- Cetegory -->
 				<div class="input-field col s6 ">
-					<select>
+					<form:select id="categoryId" path="categoryId">
 						<option   value="" disabled selected >Choose Category</option>
 						<c:forEach var="cat" items="${categoryret}">
-						<option value="${cat}">${cat}</option>
+						<option value="${cat.categoryId}">${cat}</option>
 						</c:forEach>
-					</select> 
+					</form:select> 
 				<label>Select Jewelry Type</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<form:input id="itemDesc" type="text" class="validate" path="itemDesc"/>
+					 <label class="black-text" for="itemDesc">Enter item Desc</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<form:input id="itemWeight" type="number" class="validate" step="any" path="itemWeight"/>
+					 <label class="black-text" for="itemWeight">Enter item Weight</label>
+				</div>
+				
+				<div class="input-field col s6">
+					<form:input id="itemPrice" type="number" class="validate" step="any" path="itemPrice"/>
+					 <label class="black-text" for="itemPrice">Enter item Price</label>
 				</div>
 			
 				<div class="center">
@@ -74,7 +89,7 @@
 				
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />
-			</form>
+			</form:form>
 			
 			<form action="${logoutUrl}" method="post" id="logoutForm">
 				<input type="hidden" name="${_csrf.parameterName}"
