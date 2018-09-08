@@ -51,7 +51,7 @@
 			
 		</div>
 			<form:form class="col s12" method="post"
-				action="${context}/admin/insertItem" modelAttribute="item">
+				action="${context}/admin/insertItem?${_csrf.parameterName}=${_csrf.token}" modelAttribute="item" enctype="multipart/form-data">
 				<!-- Item Name -->
 				<div class="input-field col s6">
 					<form:input id="itemName" type="text" class="validate" path="itemName"/>
@@ -82,14 +82,21 @@
 					<form:input id="itemPrice" type="number" class="validate" step="any" path="itemPrice"/>
 					 <label class="black-text" for="itemPrice">Enter item Price</label>
 				</div>
-			
-				<div class="center">
-				
+
+				<div class="file-field input-field col s6">
+					<div class="btn">
+						<span>File</span> <form:input path="files" type="file" multiple="multiple" />
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" 
+							placeholder="Upload one or more files" />
+					</div>
+				</div>
+
 				<button class="btn waves-effect waves-light red accent-2" type="submit"
 					name="action">Submit
 					<i class="material-icons right">send</i>
 				</button>
-				</div>
 				
 				<input type="hidden" name="${_csrf.parameterName}"
 					value="${_csrf.token}" />
