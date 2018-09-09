@@ -98,15 +98,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 					<div id="portfoliolist">
 					<c:forEach  var="item" items="${itemret}">
-					<div class="portfolio ${item.categoryId} mix_all" data-cat="${item.categoryId}" style="display: inline-block; opacity: 1; wow bounceIn" data-wow-delay="0.4s">
-						<div class="portfolio-wrapper">		
-							<a href="${context}/resources/images/${item.itemPicid}.jpg" class="b-link-stripe b-animate-go   swipebox"  title="Image Title">
-						     <img src="${context}/resources/images/${item.itemPicid}.jpg" />
-						     <div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 ">
-						     <img src="${context}/resources/images/add.png" alt=""/></h2>
-						  	 </div></a>
-		                </div>
-					</div>		
+					<div class="portfolio ${item.categoryId} mix_all" data-cat="${item.categoryId}" 
+					style="display: inline-block; opacity: 1; wow bounceIn" data-wow-delay="0.4s">
+								<div class="portfolio-wrapper">
+								<c:forEach varStatus = "i" var="image" items="${item.imageFileList}">
+								<a
+										href="${context}/images/${item.itemId}/${image}"
+										class="b-link-stripe b-animate-go   swipebox"
+										title="${item.itemName}">
+										
+										<c:if test = "${i.index eq 0}" >
+										<img src ="${context}/images/${item.itemId}/${image}" />
+										<div class="b-wrapper">
+											<h2 class="b-animate b-from-left    b-delay03 ">
+												<img src="${context}/resources/images/add.png" alt="" />
+											</h2>
+										</div>
+										</c:if>
+								
+								 
+								</a>
+
+									</c:forEach>
+								</div>
+							</div>		
 					</c:forEach>	
 				<%--<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1; wow bounceIn" data-wow-delay="0.4s">
 						<div class="portfolio-wrapper">		
