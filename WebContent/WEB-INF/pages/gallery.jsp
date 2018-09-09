@@ -114,6 +114,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<img src="${context}/resources/images/add.png" alt="" />
 											</h2>
 										</div>
+										<p>${item.itemName}</p>
+										<br/>
 										</c:if>
 								
 								 

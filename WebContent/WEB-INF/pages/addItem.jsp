@@ -33,6 +33,7 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="${context}/admin">Admin Page</a></li>
         <li><a href="${context}/admin/addItem">AddItem</a></li>
+        <li><a href="${context}/admin/listItem">List Item</a></li>
         <li><a href="${context}/admin/addCategory">Add Category</a></li>
         <c:if test="${pageContext.request.userPrincipal.name != null}">
         <li><a href="javascript:formSubmit()">Logout</a></li>

@@ -43,11 +43,42 @@
 	</nav>
 		<div class="container black">
 		<div class="row">
-		<div class="white-text">
-			<h3>Admin DashBoard</h3>
+			<div class="white-text">
+				<h3>Item List</h3>
+			</div>
+		<div class="card">
+			<div class="card-panel grey lighten-3">
+					<table >
+						<thead>
+							<tr>
+								<th>Item Id</th>
+								<th>Item Name</th>
+								<th>Item Price</th>
+								<th>Item Description</th>
+								<th>Item Weight</th>
+								<th>Item Category</th>
+								<th>Pic</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach var="item" items="${items}">
+						<tr>
+								<td>${item.itemId}</td>
+								<td>${item.itemName}</td>
+								<td>${item.itemPrice}</td>
+								<td>${item.itemDesc}</td>
+								<td>${item.itemWeight}</td>
+								<td>${item.categoryId}</td>
+								<td><img src ="${context }/images/${item.itemId}/${item.imageFileList[0]}"
+								width="50px" height="50px" 
+								class="materialboxed" /></td>
+						</tr>
+						</c:forEach>
+						</tbody>
+					</table>
+				</div>
 		</div>
-			
-	</div>
+		</div>
 	</div>
 
 	<c:url value="/j_spring_security_logout" var="logoutUrl" />
@@ -62,5 +93,10 @@
 		function formSubmit() {
 			document.getElementById("logoutForm").submit();
 		}
+		document.addEventListener('DOMContentLoaded', function() {
+		    var elems = document.querySelectorAll('.materialboxed');
+		    var options = {};
+		    var instances = M.Materialbox.init(elems, options);
+		  });
 	</script>
 </html>
