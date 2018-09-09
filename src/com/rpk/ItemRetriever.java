@@ -9,13 +9,17 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dao.Item;
 import com.dao.ItemDAO;
 import com.html.HTMLUtil;
+import com.util.SaveImageUtil;
 
 
 @Component
 public class ItemRetriever {
 	
 	@Autowired
-	ItemDAO itemdao;
+	private ItemDAO itemdao;
+	
+	@Autowired
+	private SaveImageUtil saveImageUtil;
 	
 	public List<Item> getItem()
 	{
@@ -26,6 +30,7 @@ public class ItemRetriever {
 	public String insertItem(Item item) {
 		try {
 			int id = itemdao.insertItem(item);
+			saveImageUtil.multipartToFile(item.getFiles(), id);
 			return HTMLUtil.SUCCESS;
 		}catch(Exception e){
 			e.printStackTrace();
