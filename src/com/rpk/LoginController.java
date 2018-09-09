@@ -44,6 +44,18 @@ public class LoginController {
 				
 	}
 	
+	
+	@RequestMapping(value="/admin/listItem",method = RequestMethod.GET)
+	public ModelAndView listItem()
+	{
+		ModelAndView model = new ModelAndView();
+		model.addObject("categoryret",catret.getCategory());
+		model.setViewName("listItem");
+		model.addObject("items", itemRetriever.getItem());
+		return model;
+				
+	}
+	
 	@RequestMapping(value="/admin/addCategory",method = RequestMethod.GET)
 	public ModelAndView addCategory()
 	{
