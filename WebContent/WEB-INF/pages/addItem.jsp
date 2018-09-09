@@ -46,7 +46,7 @@
    			Add Item Status - ${status}
    			</p>
 	</c:if>
-	<div class="container teal lighten-2">
+	<div class="container grey lighten-3">
 		<div class="row">
 		<div class="center">
 			<h4>Add New Item</h4>
