@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dao.Item;
 import com.dao.ItemDAO;
 import com.html.HTMLUtil;
+import com.util.ImageFileUtil;
 import com.util.SaveImageUtil;
 
 
@@ -20,10 +21,14 @@ public class ItemRetriever {
 	
 	@Autowired
 	private SaveImageUtil saveImageUtil;
+	@Autowired
+	private ImageFileUtil imageFileUtil;
 	
 	public List<Item> getItem()
 	{
-		return itemdao.findAll();
+		 List<Item> itemList = itemdao.findAll();
+		 itemList = imageFileUtil.updateItemImages(itemList);
+		 return itemList;
 	}
 	
 	@Transactional

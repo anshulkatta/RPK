@@ -2,6 +2,8 @@ package com.dao;
 
 // Generated 14 Jul, 2016 10:18:35 PM by Hibernate Tools 3.4.0.CR1
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,8 +31,17 @@ public class Item implements java.io.Serializable {
 	private int categoryId;
 	
 	private MultipartFile files[];
-
+	private List<String> imageFileList;
 	
+	@Transient
+	public List<String> getImageFileList() {
+		return imageFileList;
+	}
+
+	public void setImageFileList(List<String> imageFileList) {
+		this.imageFileList = imageFileList;
+	}
+
 	@Transient 
 	public MultipartFile[] getFiles() {
 		return files;

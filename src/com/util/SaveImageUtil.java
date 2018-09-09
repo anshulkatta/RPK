@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +17,9 @@ public class SaveImageUtil {
 	
 	@Autowired
 	private ServletContext servletContext;
+	@Value("${directorypath}") 
+	public String dir;
+	
 	public static File rootDir ;
 	public final String saveImagePath = "product_gallery_images" ;
 	
@@ -25,7 +29,6 @@ public class SaveImageUtil {
 		try {
 			prop.load(SaveImageUtil.class.getClassLoader().getResourceAsStream(
 					"/config.properties"));
-			String dir = prop.getProperty("directorypath");
 			rootDir = new File(dir);
 		} catch (Exception e) {
 			e.printStackTrace();
