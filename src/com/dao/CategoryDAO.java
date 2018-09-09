@@ -23,6 +23,11 @@ public class CategoryDAO {
 		
 	}
 	
+	public void insertCategory(Category category) {
+		Session s = hutil.getSessionFactory().getCurrentSession();
+		s.save(category);
+	}
+	
 	
 
 }

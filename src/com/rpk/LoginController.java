@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.dao.Category;
 import com.dao.Item;
 
 @Controller
@@ -33,12 +34,23 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/admin/addItem",method = RequestMethod.GET)
-	public ModelAndView uploaditem()
+	public ModelAndView addItem()
 	{
 		ModelAndView model = new ModelAndView();
 		model.addObject("categoryret",catret.getCategory());
 		model.setViewName("addItem");
 		model.addObject("item", new Item());
+		return model;
+				
+	}
+	
+	@RequestMapping(value="/admin/addCategory",method = RequestMethod.GET)
+	public ModelAndView addCategory()
+	{
+		ModelAndView model = new ModelAndView();
+		model.addObject("categoryret",catret.getCategory());
+		model.setViewName("addCategory");
+		model.addObject("category", new Category());
 		return model;
 				
 	}
@@ -70,6 +82,18 @@ public class LoginController {
 		ModelAndView m = new ModelAndView(); 
 		redirectAttributes.addFlashAttribute("status",response);
 		m.setViewName("redirect:/admin/addItem");
+		return m;
+	}
+	
+	@RequestMapping(value="/admin/insertCategory",method=RequestMethod.POST)
+	public ModelAndView insertCategory(@ModelAttribute("category") Category category
+			, BindingResult result,
+			ModelAndView model, RedirectAttributes redirectAttributes)
+	{
+		String response = catret.insertCategory(category);
+		ModelAndView m = new ModelAndView(); 
+		redirectAttributes.addFlashAttribute("status",response);
+		m.setViewName("redirect:/admin/addCategory");
 		return m;
 	}
 
