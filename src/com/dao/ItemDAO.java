@@ -41,4 +41,12 @@ public class ItemDAO {
 		Integer id = (Integer)s.save(item);
 		return id;
 	}
+	
+	@Transactional
+	public Integer deleteItem(int itemId) {
+		Session s= hutil.getSessionFactory().getCurrentSession();
+		Query q = s.createQuery("delete from Item where itemId = :itemId");
+		q.setParameter("itemId", itemId);
+		return q.executeUpdate();
+	}
 }

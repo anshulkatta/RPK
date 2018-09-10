@@ -49,5 +49,15 @@ public class ItemRetriever {
 			return HTMLUtil.FAIL;
 		}
 	}
+	@Transactional
+	public String deleteItem(int itemId) {
+		try{
+			int id = itemdao.deleteItem(itemId);
+			return HTMLUtil.SUCCESS;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return HTMLUtil.FAIL;
+		}
+	}
 
 }

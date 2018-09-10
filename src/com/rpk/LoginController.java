@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dao.Category;
 import com.dao.Item;
+import com.html.HTMLUtil;
 
 @Controller
 public class LoginController {
@@ -115,6 +116,16 @@ public class LoginController {
 		m.addObject("categoryret",catret.getCategory());
 		m.addObject("item",itemRetriever.getItem(itemId).get(0));
 		m.setViewName("editItem");
+		return m;
+	}
+	
+	@RequestMapping(value="/admin/deleteItem",method=RequestMethod.POST)
+	public ModelAndView deleteItem(@RequestParam int itemId) {
+		ModelAndView m = new ModelAndView();
+		m.addObject("categoryret",catret.getCategory());
+		m.addObject("item",itemRetriever.deleteItem(itemId));
+		m.addObject("status",HTMLUtil.SUCCESS);
+		m.setViewName("redirect:/admin/listItem");
 		return m;
 	}
 
