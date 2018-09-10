@@ -58,6 +58,7 @@
 								<th>Item Weight</th>
 								<th>Item Category</th>
 								<th>Pic</th>
+								<th>Actions</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -72,6 +73,22 @@
 								<td><img src ="${context }/images/${item.itemId}/${item.imageFileList[0]}"
 								width="50px" height="50px" 
 								class="materialboxed" /></td>
+								<td>
+								<form method="post"
+								action="${context}/admin/editItem">
+								<button class="waves-effect waves-light btn"
+								type="submit" name="action">
+								<i class="material-icons">edit</i>
+								</button>
+								<input type="hidden" name="itemId"
+								value="${item.itemId}" />
+								<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
+								</form>
+								<a class="waves-effect waves-light btn">
+								<i class="material-icons">delete</i>
+								</a>
+								</td>
 						</tr>
 						</c:forEach>
 						</tbody>
