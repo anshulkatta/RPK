@@ -85,9 +85,31 @@
 								<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
 								</form>
-								<a class="waves-effect waves-light btn">
+								<form method="post"
+								action="${context}/admin/deleteItem">
+								<a class="waves-effect waves-light btn
+								modal-trigger" href="#modal1">
 								<i class="material-icons">delete</i>
 								</a>
+								<div id="modal1" class="modal">
+    							<div class="modal-content">
+    							  <h4>Confirm</h4>
+      							<p>Are you Sure ? 
+      							<br/><br/>You want to delete</p>
+   								 </div>
+   								 <div class="modal-footer">
+   								 <button class="modal-close waves-effect waves-green red btn"
+   								 type="button">Cancel</button>
+      							<button class="modal-close waves-effect waves-green btn"
+      							type="submit"
+      							name="action">Ok</button>
+   								 </div>
+  								</div>
+								<input type="hidden" name="itemId"
+								value="${item.itemId}" />
+								<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
+								</form>
 								</td>
 						</tr>
 						</c:forEach>
@@ -115,5 +137,11 @@
 		    var options = {};
 		    var instances = M.Materialbox.init(elems, options);
 		  });
+		
+		document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.modal');
+			var options = {};
+			var instances = M.Modal.init(elems, options);
+		});
 	</script>
 </html>
