@@ -31,6 +31,13 @@ public class ItemRetriever {
 		 return itemList;
 	}
 	
+	public List<Item> getItem(int itemId)
+	{
+		 List<Item> itemList = itemdao.findItem(itemId);
+		 itemList = imageFileUtil.updateItemImages(itemList);
+		 return itemList;
+	}
+	
 	@Transactional
 	public String insertItem(Item item) {
 		try {

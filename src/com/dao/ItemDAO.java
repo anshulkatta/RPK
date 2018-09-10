@@ -26,6 +26,16 @@ public class ItemDAO {
 	}
 	
 	@Transactional
+	public List<Item> findItem(int itemId)
+	{
+		Session s=hutil.getSessionFactory().getCurrentSession();
+		Query q=s.createQuery("from Item where itemId = :itemId");
+		q.setParameter("itemId", itemId);
+		return  q.list();
+		
+	}
+	
+	@Transactional
 	public Integer insertItem(Item item){
 		Session s= hutil.getSessionFactory().getCurrentSession();
 		Integer id = (Integer)s.save(item);

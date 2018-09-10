@@ -108,5 +108,14 @@ public class LoginController {
 		m.setViewName("redirect:/admin/addCategory");
 		return m;
 	}
+	
+	@RequestMapping(value="/admin/editItem",method=RequestMethod.POST)
+	public ModelAndView editItem(@RequestParam int itemId) {
+		ModelAndView m = new ModelAndView();
+		m.addObject("categoryret",catret.getCategory());
+		m.addObject("item",itemRetriever.getItem(itemId).get(0));
+		m.setViewName("editItem");
+		return m;
+	}
 
 }
