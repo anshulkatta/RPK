@@ -59,7 +59,7 @@
 					<form:input id="itemName" type="text" class="validate" path="itemName"/>
 					 <label class="black-text" for="itemName">Enter Item Name</label>
 				</div>
-				<!-- Cetegory -->
+				<!-- Category -->
 				<div class="input-field col s6 ">
 					<form:select id="categoryId" path="categoryId">
 						<option   value="" disabled selected >Choose Category</option>
