@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Item</title>
+<title>Edit Item</title>
 <c:url value="/j_spring_security_logout" var="logoutUrl" />
 
 <script>
@@ -84,8 +84,15 @@
 					<form:input id="itemPrice" type="number" class="validate" step="any" path="itemPrice"/>
 					 <label class="black-text" for="itemPrice">Enter item Price</label>
 				</div>
+				<div class="col s6" style="padding-bottom:10px;">
+					<c:forEach var="imageFile" items="${item.imageFileList}">
+						<img class="materialboxed" width="50" 
+						src="${context}/images/${item.itemId}/${imageFile}" 
+						data-caption="${item.itemName }"/>
+					</c:forEach>
+				</div><br/>
 
-				<div class="file-field input-field col s6">
+				<%-- <div class="file-field input-field col s6">
 					<div class="btn">
 						<span>File</span> <form:input path="files" type="file" multiple="multiple" />
 					</div>
@@ -93,7 +100,7 @@
 						<input class="file-path validate" type="text" 
 							placeholder="Upload one or more files" />
 					</div>
-				</div>
+				</div> --%>
 
 				<button class="btn waves-effect waves-light red accent-2" type="submit"
 					name="action">Submit
@@ -123,6 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var options =  {};
     var instances = M.FormSelect.init(elems, options);
     
+  });
+  
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var options =  {};
+    var instances = M.Materialbox.init(elems, options);
   });
   
 
