@@ -53,7 +53,8 @@
 			
 		</div>
 			<form:form class="col s12" method="post"
-				action="${context}/admin/editItem?${_csrf.parameterName}=${_csrf.token}" modelAttribute="item" enctype="multipart/form-data">
+				action="${context}/admin/modifyItem" 
+				modelAttribute="item" enctype="multipart/form-data">
 				<!-- Item Name -->
 				<div class="input-field col s6">
 					<form:input id="itemName" type="text" class="validate" path="itemName"/>
@@ -88,17 +89,17 @@
 					<span>Uploaded Pics</span>
 				</h5>
 				<div class="col s6" style="padding-bottom:10px;">
-					<c:forEach var="imageFile" items="${item.imageFileList}">
-						<img class="materialboxed" width="50" style="padding-bottom:10px;"
-						src="${context}/images/${item.itemId}/${imageFile}" 
-						data-caption="${item.itemName }">
-						<form method="post"
+					<c:forEach var="imageFile" items="${item.imageFileList}" varStatus="i">
+					<form method="post" name="form${i.index}"
 								action="${context}/admin/deletePic">
+						<img  width="50" style="padding-bottom:10px;"
+						src="${context}/images/${item.itemId}/${imageFile}" 
+						data-caption="${item.itemName }" />						
 								<a class="waves-effect waves-light
-								modal-trigger" href="#modal1">
+								modal-trigger" href="#modal${i.index}">
 								<i class="small material-icons red-text accent-2">delete</i>
 								</a>
-								<div id="modal1" class="modal">
+								<div id="modal${i.index}" class="modal">
     							<div class="modal-content">
     							  <h4>Confirm</h4>
       							<p>Are you Sure ? 
@@ -109,13 +110,13 @@
    								 type="button">Cancel</button>
       							<button class="modal-close waves-effect waves-green btn"
       							type="submit"
-      							name="action">Ok</button>
+      							name="delete${i.index}">Ok</button>
    								 </div>
   								</div>
 								<input type="hidden" name="itemId"
 								value="${item.itemId}" />
 								<input type="hidden" name="imageFile"
-								value="${imageFile}">
+								value="${imageFile}" />
 								<input type="hidden" name="${_csrf.parameterName}"
 								value="${_csrf.token}" />
 								</form>
