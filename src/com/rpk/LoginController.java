@@ -119,6 +119,17 @@ public class LoginController {
 		return m;
 	}
 	
+	@RequestMapping(value="/admin/modifyItem",method=RequestMethod.POST)
+	public ModelAndView modifyItem(@ModelAttribute("item") Item item
+			, BindingResult result,
+			ModelAndView model, RedirectAttributes redirectAttributes) {
+		ModelAndView m = new ModelAndView();
+		System.out.println(item.getItemName());
+		m.addObject("categoryret",catret.getCategory());
+		m.setViewName("editItem");
+		return m;
+	} 
+	
 	@RequestMapping(value="/admin/deleteItem",method=RequestMethod.POST)
 	public ModelAndView deleteItem(@RequestParam int itemId) {
 		ModelAndView m = new ModelAndView();
