@@ -53,7 +53,7 @@
 			
 		</div>
 			<form:form class="col s12" method="post"
-				action="${context}/admin/insertItem?${_csrf.parameterName}=${_csrf.token}" modelAttribute="item" enctype="multipart/form-data">
+				action="${context}/admin/editItem?${_csrf.parameterName}=${_csrf.token}" modelAttribute="item" enctype="multipart/form-data">
 				<!-- Item Name -->
 				<div class="input-field col s6">
 					<form:input id="itemName" type="text" class="validate" path="itemName"/>
@@ -84,11 +84,42 @@
 					<form:input id="itemPrice" type="number" class="validate" step="any" path="itemPrice"/>
 					 <label class="black-text" for="itemPrice">Enter item Price</label>
 				</div>
+				<h5 class="blue-text">
+					<span>Uploaded Pics</span>
+				</h5>
 				<div class="col s6" style="padding-bottom:10px;">
 					<c:forEach var="imageFile" items="${item.imageFileList}">
-						<img class="materialboxed" width="50" 
+						<img class="materialboxed" width="50" style="padding-bottom:10px;"
 						src="${context}/images/${item.itemId}/${imageFile}" 
-						data-caption="${item.itemName }"/>
+						data-caption="${item.itemName }">
+						<form method="post"
+								action="${context}/admin/deletePic">
+								<a class="waves-effect waves-light
+								modal-trigger" href="#modal1">
+								<i class="small material-icons red-text accent-2">delete</i>
+								</a>
+								<div id="modal1" class="modal">
+    							<div class="modal-content">
+    							  <h4>Confirm</h4>
+      							<p>Are you Sure ? 
+      							<br/><br/>You want to delete</p>
+   								 </div>
+   								 <div class="modal-footer">
+   								 <button class="modal-close waves-effect waves-green red btn"
+   								 type="button">Cancel</button>
+      							<button class="modal-close waves-effect waves-green btn"
+      							type="submit"
+      							name="action">Ok</button>
+   								 </div>
+  								</div>
+								<input type="hidden" name="itemId"
+								value="${item.itemId}" />
+								<input type="hidden" name="imageFile"
+								value="${imageFile}">
+								<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" />
+								</form>
+						
 					</c:forEach>
 				</div><br/>
 
@@ -117,12 +148,6 @@
 			</form>
 		</div>
 	</div>
-
-
-
-
-
-	
 </body>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
@@ -137,6 +162,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var options =  {};
     var instances = M.Materialbox.init(elems, options);
   });
+  
+document.addEventListener('DOMContentLoaded', function() {
+	var elems = document.querySelectorAll('.modal');
+	var options = {};
+	var instances = M.Modal.init(elems, options);
+});
   
 
 </script>
