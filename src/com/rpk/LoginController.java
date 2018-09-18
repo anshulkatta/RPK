@@ -124,7 +124,11 @@ public class LoginController {
 			, BindingResult result,
 			ModelAndView model, RedirectAttributes redirectAttributes) {
 		ModelAndView m = new ModelAndView();
-		System.out.println(item.getItemName());
+		String response = itemRetriever.updateItem(item);
+		if(response.equals(HTMLUtil.SUCCESS)) {
+			m.addObject("status", HTMLUtil.SUCCESS);
+		}
+		m.addObject("item", itemRetriever.getItem(item.getItemId()).get(0));
 		m.addObject("categoryret",catret.getCategory());
 		m.setViewName("editItem");
 		return m;

@@ -59,5 +59,17 @@ public class ItemRetriever {
 			return HTMLUtil.FAIL;
 		}
 	}
+	
+	@Transactional
+	public String updateItem(Item item) {
+		try {
+			itemdao.updateItem(item);			
+			return HTMLUtil.SUCCESS;
+		}catch(Exception e){
+			e.printStackTrace();
+			return HTMLUtil.FAIL;
+		}
+	}
+	
 
 }

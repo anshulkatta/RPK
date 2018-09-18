@@ -49,4 +49,11 @@ public class ItemDAO {
 		q.setParameter("itemId", itemId);
 		return q.executeUpdate();
 	}
+	
+	@Transactional
+	public Integer updateItem(Item item){
+		Session s= hutil.getSessionFactory().getCurrentSession();
+		s.update(item);
+		return item.getItemId();
+	}
 }
