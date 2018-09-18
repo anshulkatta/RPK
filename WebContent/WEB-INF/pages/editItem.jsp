@@ -54,7 +54,7 @@
 		</div>
 			<form:form class="col s12" method="post"
 				action="${context}/admin/modifyItem" 
-				modelAttribute="item" enctype="multipart/form-data">
+				modelAttribute="item">
 				<!-- Item Name -->
 				<div class="input-field col s6">
 					<form:input id="itemName" type="text" class="validate" path="itemName"/>
@@ -68,7 +68,7 @@
 						<option value="${cat.categoryId}">${cat}</option>
 						</c:forEach>
 					</form:select> 
-				<label>Select Jewelry Type</label>
+				<label>Select Jewelery Type</label>
 				</div>
 				
 				<div class="input-field col s6">
@@ -85,14 +85,48 @@
 					<form:input id="itemPrice" type="number" class="validate" step="any" path="itemPrice"/>
 					 <label class="black-text" for="itemPrice">Enter item Price</label>
 				</div>
-				<h5 class="blue-text">
-					<span>Uploaded Pics</span>
-				</h5>
-				<div class="col s6" style="padding-bottom:10px;">
-					<c:forEach var="imageFile" items="${item.imageFileList}" varStatus="i">
+				
+
+				<%-- <div class="file-field input-field col s6">
+					<div class="btn">
+						<span>File</span> <form:input path="files" type="file" multiple="multiple" />
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" 
+							placeholder="Upload one or more files" />
+					</div>
+				</div> --%>
+				
+				<input type="hidden" name="itemId"
+								value="${item.itemId}" />
+
+				<button class="btn waves-effect waves-light red accent-2" type="submit"
+					name="action">Submit
+					<i class="material-icons right">send</i>
+				</button>
+				
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form:form>
+			
+			<form action="${logoutUrl}" method="post" id="logoutForm">
+				<input type="hidden" name="${_csrf.parameterName}"
+					value="${_csrf.token}" />
+			</form>
+		</div>
+	</div>
+	<div class="container grey lighten-3">
+	<div class="card grey lighten-3">
+		<div class="card-title">
+			<h5 class="center blue-text">
+				<span>Uploaded Pics</span>
+			</h5>
+		</div>
+		<div class="card-content grey lighten-3">
+		<c:forEach var="imageFile" items="${item.imageFileList}" varStatus="i">
 					<form method="post" name="form${i.index}"
 								action="${context}/admin/deletePic">
-						<img  width="50" style="padding-bottom:10px;"
+						<img  width="50" style="padding-bottom:10px;" class="materialboxed"
 						src="${context}/images/${item.itemId}/${imageFile}" 
 						data-caption="${item.itemName }" />						
 								<a class="waves-effect waves-light
@@ -122,32 +156,8 @@
 								</form>
 						
 					</c:forEach>
-				</div><br/>
-
-				<%-- <div class="file-field input-field col s6">
-					<div class="btn">
-						<span>File</span> <form:input path="files" type="file" multiple="multiple" />
-					</div>
-					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text" 
-							placeholder="Upload one or more files" />
-					</div>
-				</div> --%>
-
-				<button class="btn waves-effect waves-light red accent-2" type="submit"
-					name="action">Submit
-					<i class="material-icons right">send</i>
-				</button>
-				
-				<input type="hidden" name="${_csrf.parameterName}"
-					value="${_csrf.token}" />
-			</form:form>
-			
-			<form action="${logoutUrl}" method="post" id="logoutForm">
-				<input type="hidden" name="${_csrf.parameterName}"
-					value="${_csrf.token}" />
-			</form>
 		</div>
+	</div>
 	</div>
 </body>
 <script type="text/javascript">
