@@ -50,11 +50,10 @@ public class LoginController {
 	public ModelAndView listItem()
 	{
 		ModelAndView model = new ModelAndView();
-		model.addObject("categoryret",catret.getCategory());
+		model.addObject("categoryret",catret.getCategoryMap());
 		model.setViewName("listItem");
 		model.addObject("items", itemRetriever.getItem());
 		return model;
-				
 	}
 	
 	@RequestMapping(value="/admin/addCategory",method = RequestMethod.GET)
@@ -113,7 +112,7 @@ public class LoginController {
 	@RequestMapping(value="/admin/editItem",method=RequestMethod.POST)
 	public ModelAndView editItem(@RequestParam int itemId) {
 		ModelAndView m = new ModelAndView();
-		m.addObject("categoryret",catret.getCategory());
+		m.addObject("categoryList",catret.getCategory());
 		m.addObject("item",itemRetriever.getItem(itemId).get(0));
 		m.setViewName("editItem");
 		return m;
@@ -129,7 +128,7 @@ public class LoginController {
 			m.addObject("status", HTMLUtil.SUCCESS);
 		}
 		m.addObject("item", itemRetriever.getItem(item.getItemId()).get(0));
-		m.addObject("categoryret",catret.getCategory());
+		m.addObject("categoryList",catret.getCategory());
 		m.setViewName("editItem");
 		return m;
 	} 
