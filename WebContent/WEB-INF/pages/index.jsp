@@ -72,7 +72,8 @@
 								<div class="banner">
 									<!-- logo -->
 									 <div class="logo">
-										<a href="${context}/index"><img src="${context}/resources/images/logo.png" alt=""></a>
+										<a href="${context}/index"><img src="${context}/resources/images/RPK.png" 
+										width="400px" height="400px" alt=""></a>
 									</div>
 									<!-- //logo -->
 								</div>
@@ -81,7 +82,8 @@
 								<div class="banner two">
 									<!-- logo -->
 									 <div class="logo">
-										<a href="${context}/index"><img src="${context}/resources/images/logo.png" alt=""></a>
+										<a href="${context}/index"><img src="${context}/resources/images/RPK.png" 
+										width="400px" height="400px" alt=""></a>
 									</div>
 									<!-- //logo -->
 								</div>
@@ -90,7 +92,8 @@
 								<div class="banner three">
 									<!-- logo -->
 									 <div class="logo">
-										<a href="${context}/index"><img src="${context}/resources/images/logo.png" alt=""></a>
+										<a href="${context}/index"><img src="${context}/resources/images/RPK.png" 
+										width="400px" height="400px" alt=""></a>
 									</div>
 									<!-- //logo -->
 								</div>
@@ -127,13 +130,17 @@
 				<div class="welcome-main">
 					<h1>Welcome ! </h1>
 						<img src="${context}/resources/images/design.png" alt=""/>
-					<h3>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt 
-						ut labore et dolore magna  ctetur adipisicing elit, aliqua.</h3>
-					<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-					sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>	  			
+					<h3 style="color: #cc7a00;">Ram Pratap Katta & Sons <br/> is 60 year old Gold Merchant in Alwar 
+						as a Brand for buying Gold ,Silver & Diamond Jewellery </h3>
+				<p style="color: #499bff;">We Sell Elegant and Beautiful Jewellery 
+					designs crafted with accurate carvings and Pure Gold. 
+					We have been the oldest Seller in<br/> Alwar and Moradabad
+					with 100,000+ customer in Rajasthan and U.P. <br/>
+					We are trusted as our legacy speak of 60 years of Business
+					<br/>
+					Welcome to our online portfolio of Pure & Eloquent designer Jewllery
+					and help us make you Proud & Happy Customer</p>
+			</div>	  			
 			</div>
 		</div>	
 	<!--start-collection-->
@@ -269,8 +276,10 @@
 		<div class="copy-right-section  wow bounceInRight" data-wow-delay="0.4s">
 				<div class="container">
 					<div class="col-md-6 copy-right">
-						<a href="index.jsp"><img src="${context}/resources/images//logo2.png" alt=""></a>
-						<p>Design by &nbsp;<a href="http://w3layouts.com">W3Layouts</a></p>
+						<a href="index.jsp"><img src="${context}/resources/images/RPK.png" 
+										width="300px" height="300px" alt=""></a>
+						<p>Design by &nbsp;<a href="https://anshulkatta.in" target="_blank">
+						Anshul Katta</a></p>
 					</div>
 					<div class="col-md-6 social-icons">
 								<ul class="soc_icons2">
