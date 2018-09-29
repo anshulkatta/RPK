@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Item</title>
+<title>List Item</title>
 <c:url value="/j_spring_security_logout" var="logoutUrl" />
 
 <script>
@@ -69,7 +69,7 @@
 								<td>${item.itemPrice}</td>
 								<td>${item.itemDesc}</td>
 								<td>${item.itemWeight}</td>
-								<td>${item.categoryId}</td>
+								<td><c:out value="${categoryret[item.categoryId]}"/></td>
 								<td><img src ="${context }/images/${item.itemId}/${item.imageFileList[0]}"
 								width="50px" height="50px" 
 								class="materialboxed" /></td>

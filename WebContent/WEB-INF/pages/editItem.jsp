@@ -63,9 +63,17 @@
 				<!-- Category -->
 				<div class="input-field col s6 ">
 					<form:select id="categoryId" path="categoryId">
+					    <c:set var="selectedCat" value=""/>
 						<option   value="" disabled selected >Choose Category</option>
-						<c:forEach var="cat" items="${categoryret}">
-						<option value="${cat.categoryId}">${cat}</option>
+						<c:forEach var="cat" items="${categoryList}">
+						<c:choose>
+							<c:when test="${item.categoryId == cat.categoryId}">
+								<option value="${cat.categoryId}" selected>${cat}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${cat.categoryId}">${cat}</option>
+							</c:otherwise>
+						</c:choose>
 						</c:forEach>
 					</form:select> 
 				<label>Select Jewelery Type</label>
