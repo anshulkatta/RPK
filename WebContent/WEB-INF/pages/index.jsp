@@ -109,7 +109,7 @@
 							<ul class="navig">
 								<li class="active"><a href="${context}/index"><i class="bag"></i><p class="active">About</p><div class="clearfix"></div></a></li>
 								<li class="nab"><a href="${context}/gallery"><i class="gallery"></i><p>Gallery</p><div class="clearfix"></div></a></li>
-								<li class="naa" ><a href="${context}/404"><i class="settings"></i><p>Services</p><div class="clearfix"></div></a></li>
+								<li class="naa" ><a href="${context}/service"><i class="settings"></i><p>Services</p><div class="clearfix"></div></a></li>
 								<li class="nac"><a href="${context}/news"><i class="message"></i><p>News</p><div class="clearfix"></div></a></li>
 								<li class="nae"><a href="${context}/mail"><i class="send"></i><p>Mail Us</p><div class="clearfix"></div></a></li>
 							</ul>
