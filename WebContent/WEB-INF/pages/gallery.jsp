@@ -257,25 +257,6 @@ $(function () {
 						</ul>
 
 				</div>
-				<div class="col-md-4 info-grid information">
-					<h3>Information</h3>
-					<div class="list styled arrow-list2 two">
-						<ul>
-							<li><a href="#"><img src="${context}/resources/images/tick.png" alt=""/>Nulla ullamcorper porttitor</a></li>
-							<li><a href="#"><img src="${context}/resources/images/tick.png" alt=""/>Fusce consequat porta leo</a></li>
-							<li><a href="#"><img src="${context}/resources/images/tick.png" alt=""/>Consectetur adipiscing elit</a></li>
-							<li><a href="#"><img src="${context}/resources/images/tick.png" alt=""/>Netus et malesuada fames</a></li>
-								<div class="clearfix"></div>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 info-grid custom">
-					<h3>Custom Block</h3>
-					<h4>Quisque maximus purus in </h4>
-					<p>Duis ullamcorper at lectus ac accum
-					san. Quisque pellentesque et mauris tellus. Proin 
-					pellentesque lectus  magna null.</p>
-				</div>
 					<div class="clearfix"></div>
 			</div>
 		</div>
@@ -284,15 +265,16 @@ $(function () {
 		<div class="copy-right-section  wow bounceInRight" data-wow-delay="0.4s">
 				<div class="container">
 					<div class="col-md-6 copy-right">
-						<a href="${context}/index.jsp"><img src="${context}/resources/images/logo2.png" alt=""></a>
-						<p>Design by &nbsp;<a href="http://w3layouts.com">W3Layouts</a></p>
+						<a href="index.jsp"><img src="${context}/resources/images/logo.png" 
+										width="300px" height="300px" alt=""></a>
+						<p>Design by &nbsp;<a href="https://anshulkatta.in" target="_blank">
+						Anshul Katta</a></p>
 					</div>
 					<div class="col-md-6 social-icons">
 								<ul class="soc_icons2">
 									<h5>Follow us :</h5>
 											<li><a href="#"><i class="icon_4"></i></a></li>
-											<li><a href="#"><i class="icon_5"></i></a></li>
-											<li><a href="#"><i class="icon_6"></i></a></li>
+											<li><a href="https://plus.google.com/117311576201742789004"><i class="icon_6"></i></a></li>
 											<div class="clearfix"> </div>
 										</ul>
 							<div class="clearfix"> </div>

@@ -101,7 +101,7 @@ jewellery,gold,silver,diamond" />
 				<p>Sorry Page Not Found !</p>
 			</div>
 
-			<a class="back" href="index.html">Back To Home</a>
+			<a class="back" href="${context}/index">Back To Home</a>
 
 		</div>
 	</div>
@@ -111,41 +111,17 @@ jewellery,gold,silver,diamond" />
 			<div class="information-grids wow bounceInLeft" data-wow-delay="0.4s">
 				<div class="col-md-4 info-grid loction">
 					<h3>Location</h3>
-					<ul class="loction-text">
-						<li>10-765 mg-Road,</li>
-						<li>Washington, DC, United States,</li>
-						<li>ud-19832-6578.,</li>
-						<li><img src="images/mail.png" alt=""></li>
-						<li><a href="mailto:info@example.com">mail@example.com</a></li>
-						<div class="clearfix"></div>
-					</ul>
+					 <ul class="loction-text">
+							<li>148 ,Road No.2 , Jai complex</li>
+							<li>Alwar , Rajasthan</li>	
+							<li>9829050157</li>
+							<li><a href="mailto:anshul.katta@gmail.com">
+							 	<img src="${context}/resources/images//mail.png" alt="" />	
+							</a></li>
+							<li><a href="https://goo.gl/maps/mqzvWqav1492" target="_blank">Click for Map Location</a></li>
+						</ul>
 
 				</div>
-				<div class="col-md-4 info-grid information">
-					<h3>Information</h3>
-					<div class="list styled arrow-list2 two">
-						<ul>
-							<li><a href="#"><img src="images/tick.png" alt="" />Nulla
-									ullamcorper porttitor</a></li>
-							<li><a href="#"><img src="images/tick.png" alt="" />Fusce
-									consequat porta leo</a></li>
-							<li><a href="#"><img src="images/tick.png" alt="" />Consectetur
-									adipiscing elit</a></li>
-							<li><a href="#"><img src="images/tick.png" alt="" />Netus
-									et malesuada fames</a></li>
-							<div class="clearfix"></div>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-4 info-grid custom">
-					<h3>Custom Block</h3>
-					<h4>Quisque maximus purus in</h4>
-					<p>Duis ullamcorper at lectus ac accum san. Quisque
-						pellentesque et mauris tellus. Proin pellentesque lectus magna
-						null.</p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
 		</div>
 	</div>
 	<!--start-footer-->
