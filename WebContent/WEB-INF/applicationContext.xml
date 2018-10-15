@@ -39,6 +39,7 @@
 			<list>
 				<value>com.dao.Item</value>
 				<value>com.dao.Category</value>
+				<value>com.dao.Feedback</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
