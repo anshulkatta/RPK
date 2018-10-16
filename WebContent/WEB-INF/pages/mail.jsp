@@ -1,13 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Jewelexa Fashion Category Flat Bootstrap Responsive Web Template| Mail :: w3layouts</title>
+<title>Ram Pratap Katta & Sons Saraff</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
 <!-- Custom Theme files -->
@@ -50,14 +44,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="header-section two" id="home">
 				<div class="container">
 					 <div class="logo two">
-						<a href="index.html"><img src="images/logo.png" alt=""></a>
+						<a href="${context}/index"><img src="images/logo.png" alt=""></a>
 					</div>
 						<span class="menu"></span>
 						<div class="clears"></div>
 						<div class="navigation">
 							<ul class="navig">
-								<li><a href="index.html"><i class="bag"></i><p>About</p><div class="clearfix"></div></a></li>
-								<li class="nab"><a href="gallery.html"><i class="gallery"></i><p>Gallery</p><div class="clearfix"></div></a></li>
+								<li><a href="${context}/index"><i class="bag"></i><p>About</p><div class="clearfix"></div></a></li>
+								<li class="nab"><a href="${context}/gallery"><i class="gallery"></i><p>Gallery</p><div class="clearfix"></div></a></li>
 								<li class="naa" ><a href="404.html"><i class="settings"></i><p>Services</p><div class="clearfix"></div></a></li>
 								<li class="nac"><a href="news.html"><i class="message"></i><p>News</p><div class="clearfix"></div></a></li>
 								<li class="active"><a href="mail.html"><i class="send"></i><p class="active">Mail Us</p><div class="clearfix"></div></a></li>

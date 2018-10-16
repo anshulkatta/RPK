@@ -1,13 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Jewelex a Fashion Category Flat Bootstrap Responsive Web Template | Single :: w3layouts</title>
+<title>Ram Pratap Katta & Sons Saraff</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
 <!-- Custom Theme files -->

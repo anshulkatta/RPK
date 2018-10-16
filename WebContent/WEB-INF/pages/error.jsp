@@ -3,8 +3,7 @@
 <html>
 <head>
 <c:set var="context" value="${pageContext.request.contextPath}" />
-<title>Jewelex a Fashion Category Flat Bootstrap Responsive Web
-	Template| 404 :: w3layouts</title>
+<title>Ram Pratap Katta & Sons Saraff</title>
 <link href="${context}/resources/css/bootstrap.css" rel='stylesheet'
 	type='text/css' />
 
@@ -129,7 +128,8 @@ jewellery,gold,silver,diamond" />
 		data-wow-delay="0.4s">
 		<div class="container">
 			<div class="col-md-6 copy-right">
-				<a href="${context}/index"><img src="${context}/resources/images/RPK.png" alt=""></a>
+				<a href="${context}/index"><img src="${context}/resources/images/RPK.png" alt=""
+				width="300px" height="300px"></a>
 				<p>
 					Design by &nbsp;<a href="https://anshulkatta.in">Anshul Katta</a>
 				</p>

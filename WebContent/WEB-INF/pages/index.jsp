@@ -1,14 +1,19 @@
 <%@ page language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 <title>Ram Pratap Katta & Sons Saraff</title>
+<link rel="shortcut icon" type="image/x-icon" href="${context}/resources/images/RPK.ico"/>
+
 <link href="${context}/resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
 <!-- Custom Theme files -->
 <link href="${context}/resources/css/style.css" rel='stylesheet' type='text/css' />
 <!--Custom Theme files-->
+<sec:csrfMetaTags />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Ram Pratap Katta & Sons Saraff Jewellery Items" 
@@ -42,6 +47,7 @@
 	<!--webfonts-->	
 </head>
 <body>
+
 <!--header-->
 	<!-- banner Slider starts Here -->
 					<script src="${context}/resources/js/responsiveslides.min.js"></script>
@@ -72,8 +78,8 @@
 								<div class="banner">
 									<!-- logo -->
 									 <div class="logo">
-										<a href="${context}/index"><img src="${context}/resources/images/RPK.png" 
-										width="400px" height="400px" alt=""></a>
+										<a href="${context}/index"><img src="${context}/resources/images/logo.png" 
+										width="400px" height="400px"></a>
 									</div>
 									<!-- //logo -->
 								</div>
@@ -82,8 +88,8 @@
 								<div class="banner two">
 									<!-- logo -->
 									 <div class="logo">
-										<a href="${context}/index"><img src="${context}/resources/images/RPK.png" 
-										width="400px" height="400px" alt=""></a>
+										<a href="${context}/index"><img src="${context}/resources/images/logo.png" 
+										width="400px" height="400px" ></a>
 									</div>
 									<!-- //logo -->
 								</div>
@@ -92,8 +98,8 @@
 								<div class="banner three">
 									<!-- logo -->
 									 <div class="logo">
-										<a href="${context}/index"><img src="${context}/resources/images/RPK.png" 
-										width="400px" height="400px" alt=""></a>
+										<a href="${context}/index"><img src="${context}/resources/images/logo.png" 
+										width="400px" height="400px"></a>
 									</div>
 									<!-- //logo -->
 								</div>
@@ -132,14 +138,15 @@
 						<img src="${context}/resources/images/design.png" alt=""/>
 					<h3 style="color: #cc7a00;">Ram Pratap Katta & Sons <br/> is 60 year old Gold Merchant in Alwar 
 						as a Brand for buying Gold ,Silver & Diamond Jewellery </h3>
-				<p style="color: #499bff;">We Sell Elegant and Beautiful Jewellery 
+				<p style="color: #ab47bc;font-weight:bold;">We Sell Elegant and Beautiful Jewellery 
 					designs crafted with accurate carvings and Pure Gold. 
 					We have been the oldest Seller in<br/> Alwar and Moradabad
 					with 100,000+ customer in Rajasthan and U.P. <br/>
 					We are trusted as our legacy speak of 60 years of Business
 					<br/>
-					Welcome to our online portfolio of Pure & Eloquent designer Jewllery
-					and help us make you Proud & Happy Customer</p>
+					Welcome to our online portfolio of Pure & Eloquent designer Jewellery
+					and help us make you Proud & Happy Customer
+					<br/>Our Jewellery has the power to make you feel unique</p> 
 			</div>	  			
 			</div>
 		</div>	
@@ -148,32 +155,31 @@
 		<div class="container">
 			 <div class="collection-main">
 			 	<div class="col-md-4 collection-text">
-			 		<h2>Exquisite Jewelry only for you</h2>
-			 		<h4>Donec at gravida lacus Interdum malesuada fames ac ante </h4>
-			 		<p>Vivamus viverra nisl convallis tempus. 
-						Nunc nec sem felis. Donec rhoncus leo tempus 
-						egestas. Phasellus luctus at justo tristique. 
-						Maecenas bibendum dolor quis volutpat .</p>
+			 		<h2>Exquisite Jewellery only for you</h2>
+			 		<h4>We make Exclusive custom Jewellery for you 
+			 		if you have a design in your mind</h4>
+			 		<p>We also sell Rose Gold , Diamonds of
+			 		various types and Stones for your religios beliefs </p>
 						<a class="read" href="single.jsp">Read More</a>
 
 			 	</div>
 			 	<div class="col-md-8 collection-${context}/resources/images/">
-			 		<h3>New Jewelry collection</h3>
+			 		<h3>New Jewellery collection</h3>
 			 		<div class="col-md-4 collection-${context}/resources/images/-grid">
 			 			<img src="${context}/resources/images//c1.jpg" alt=""/>
-			 			<h4>Proin interdum</h4>
-			 			<a class="read one" href="${context}/pages/single.jsp">More</a>
+			 			<h4></h4>
+			 			<a class="read one" href="${context}/gallery">More</a>
 			 		
 			 		</div>
 			 		<div class="col-md-4 collection-${context}/resources/images/-grid">
 			 			<img src="${context}/resources/images//c2.jpg" alt=""/>
-			 			<h4>Proin interdum</h4>
-			 			<a class="read one" href="${context}/pages/single.jsp">More</a>
+			 			<h4></h4>
+			 			<a class="read one" href="${context}/gallery">More</a>
 			 		</div>
 			 		<div class="col-md-4 collection-${context}/resources/images/-grid third">
 			 			<img src="${context}/resources/images//c3.jpg" alt=""/>
-			 			<h4>Proin interdum</h4>
-			 			<a class="read one" href="${context}/pages/single.jsp">More</a>
+			 			<h4></h4>
+			 			<a class="read one" href="${context}/gallery">More</a>
 			 		</div>
 			 	</div>
 			 	 <div class="clearfix"></div>
@@ -186,44 +192,45 @@
 		<div class="container">
 			 <div class="adv-main">
 			 	<div class="col-md-8 adv-${context}/resources/images/">
-			 		<h3>Our Advantages</h3>
+			 		<h3>Our Showcase</h3>
 			 		<div class="col-md-4 adv-${context}/resources/images/-grid">
 			 			<img src="${context}/resources/images//adv.jpg" alt=""/>
-			 				<p>Vivamus viverra nisl conva  
-						Nunc nec sem felis. Donec rho 
-						egestas. Phasellus luctus at nec sem </p>
-			 			<a class="read two" href="single.jsp">Read More</a>
+			 				<p>Here is a collection
+			 				of alluring <span style="color: #cc7a00;">Nose Rings and Baalis</span></p>
+			 			<a class="read two" href="${context}/gallery">Read More</a>
 			 		
 			 		</div>
 			 		<div class="col-md-4 adv-${context}/resources/images/-grid">
 			 			<img src="${context}/resources/images//adv2.jpg" alt=""/>
-			 				<p>Vivamus viverra nisl conva  
-						Nunc nec sem felis. Donec rho 
-						egestas. Phasellus luctus at nec sem </p>
-			 			<a class="read two" href="${context}/pages/single.jsp">Read More</a>
+			 				<p>Explore Illusive <span style="color: #cc7a00;">
+			 				 Gold-Diamond Chains & Pendants</span></p>
+			 			<a class="read two" href="${context}/gallery">Read More</a>
 			 		</div>
 			 		<div class="col-md-4 adv-${context}/resources/images/-grid third">
 			 			<img src="${context}/resources/images//adv3.jpg" alt=""/>
-			 			<p>Vivamus viverra nisl conva  
-						Nunc nec sem felis. Donec rho 
-						egestas. Phasellus luctus at nec sem </p>
-			 			<a class="read two" href="${context}/pages/single.jsp">Read More</a>
+			 			<p>Tantalising 
+			 			<span style="color: #cc7a00;">Bracelets and Bangles</span>
+			 			</p>
+			 			<a class="read two" href="${context}/gallery">Read More</a>
 			 		</div>
 			 	</div>
 			 	<div class="col-md-4 Adv-text-populor">
 			 		<h3>Popular</h3>
 			 		<div class="list styled arrow-list2">
 						<ul>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Nulla ullamcorper porttitor</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Fusce consequat porta leo</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Consectetur adipiscing elit</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Netus et malesuada fames</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Ut vitae quam molestie cone</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Curabitur consectetur velit</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Vestibulum aliquet orci justo</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Consectetur adipiscing elit</a></li>
-							<li><a href="#"><img src="${context}/resources/images//ar.png" alt=""/>Nulla ullamcorper porttitor</a></li>
-								<div class="clearfix"></div>
+							<li><a href="${context}/gallery"><img
+									src="${context}/resources/images//ar.png" alt="" />
+									Mangal Sutra</a></li>
+							<li><a href="${context}/gallery"><img
+									src="${context}/resources/images//ar.png" alt="" />
+									Maang Tika</a></li>
+							<li><a href="${context}/gallery"><img
+									src="${context}/resources/images//ar.png" alt="" />
+									Payal</a></li>
+							<li><a href="${context}/gallery"><img
+									src="${context}/resources/images//ar.png" alt="" />
+									Ladies and Gents Ring</a></li>
+							<div class="clearfix"></div>
 						</ul>
 					</div>
 				</div>
@@ -235,7 +242,7 @@
 	<!--start-information-->
 	<div class="information-section">
 		<div class="container">
-			<div class="information-grids wow bounceInLeft" data-wow-delay="0.4s">
+			<div class="information-grids wow bounceInLeft" data-wow-delay="0.4s" style="align-center">
 				<div class="col-md-4 info-grid loction">
 					<h3>Location</h3>
 					 <ul class="loction-text">
@@ -249,25 +256,25 @@
 						</ul>
 
 				</div>
-				<div class="col-md-4 info-grid information">
-					<h3>Information</h3>
-					<div class="list styled arrow-list2 two">
-						<ul>
-							<li><a href="#"><img src="${context}/resources/images//tick.png" alt=""/>Nulla ullamcorper porttitor</a></li>
-							<li><a href="#"><img src="${context}/resources/images//tick.png" alt=""/>Fusce consequat porta leo</a></li>
-							<li><a href="#"><img src="${context}/resources/images//tick.png" alt=""/>Consectetur adipiscing elit</a></li>
-							<li><a href="#"><img src="${context}/resources/images//tick.png" alt=""/>Netus et malesuada fames</a></li>
-								<div class="clearfix"></div>
-						</ul>
-					</div>
+				
+				<div class="col-md-4 info-grid loction">
+					<h3>Feedback</h3>
+					<form:form action="${context}/insertFeedback?${_csrf.parameterName}=${_csrf.token}" 
+					method="post" >
+					Your Name :<br/> <input type="text" 
+					id="feedbackName" name="name" placeholder="Name"/><br/><br/>
+					Your Email Id : <br/> <input 
+					id="feedbackEmail" type="email" name="email" placeholder="abc@example.com"/><br/><br/>
+					Feedback : <br/><textarea 
+					id="feedbackText" style="resize: none; margin: 32.2px 0px 0px; height: 100px; width: 300px;"
+					></textarea>
+					
+					<input type="submit" value="Submit"/>
+					</form:form>
+
 				</div>
-				<div class="col-md-4 info-grid custom">
-					<h3>Custom Block</h3>
-					<h4>Quisque maximus purus in </h4>
-					<p>Duis ullamcorper at lectus ac accum
-					san. Quisque pellentesque et mauris tellus. Proin 
-					pellentesque lectus  magna null.</p>
-				</div>
+				
+				
 					<div class="clearfix"></div>
 			</div>
 		</div>
@@ -276,7 +283,7 @@
 		<div class="copy-right-section  wow bounceInRight" data-wow-delay="0.4s">
 				<div class="container">
 					<div class="col-md-6 copy-right">
-						<a href="index.jsp"><img src="${context}/resources/images/RPK.png" 
+						<a href="${context}/index"><img src="${context}/resources/images/logo.png" 
 										width="300px" height="300px" alt=""></a>
 						<p>Design by &nbsp;<a href="https://anshulkatta.in" target="_blank">
 						Anshul Katta</a></p>
@@ -285,8 +292,7 @@
 								<ul class="soc_icons2">
 									<h5>Follow us :</h5>
 											<li><a href="#"><i class="icon_4"></i></a></li>
-											<li><a href="#"><i class="icon_5"></i></a></li>
-											<li><a href="#"><i class="icon_6"></i></a></li>
+											<li><a href="https://plus.google.com/117311576201742789004"><i class="icon_6"></i></a></li>
 											<div class="clearfix"> </div>
 										</ul>
 							<div class="clearfix"> </div>
